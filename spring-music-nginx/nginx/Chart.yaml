@@ -1,0 +1,8 @@
+description: nginx based web server for spring music application.
+maintainers:
+- email: harshal@infracloud.io
+  name: Harshal Shah
+name: spring-music-nginx
+sources:
+- https://github.com/jenkinsci/docker-jnlp-slave
+version: 0.0.2

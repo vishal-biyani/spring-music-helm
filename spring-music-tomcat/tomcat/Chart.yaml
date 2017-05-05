@@ -1,0 +1,8 @@
+description: Tomcat based app server for spring music application.
+maintainers:
+- email: harshal@infracloud.io
+  name: Harshal Shah
+name: spring-music-tomcat
+sources:
+- https://github.com/jenkinsci/docker-jnlp-slave
+version: 0.0.1

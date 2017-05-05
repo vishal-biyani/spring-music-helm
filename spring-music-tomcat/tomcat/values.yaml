@@ -1,0 +1,4 @@
+Production:
+  ImageName: harshals/spring-music-tomcat
+  ImageTag: master.10
+  Replicas: 3

@@ -1,0 +1,41 @@
+---
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  name: nginx-app
+spec:
+  replicas: {{ .Values.Production.Replicas }}
+  template:
+    metadata:
+      name: nginx-app
+      labels:
+        app: nginx-app
+        role: nginx
+        env: production
+    spec:
+      containers:
+      - name: nginx
+        image: {{ .Values.Production.ImageName }}:{{ .Values.Production.ImageTag }}
+        resources:
+          limits:
+            memory: "500Mi"
+            cpu: "100m"
+        imagePullPolicy: Always
+        ports:
+        - name: frontend
+          containerPort: 8080
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: nginx-app
+spec:
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  selector:
+    app: nginx-app
+    role: nginx
