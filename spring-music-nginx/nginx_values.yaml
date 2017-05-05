@@ -1,5 +1,5 @@
 Production:
   ImageName: harshals/spring-music-nginx
-  ImageTag: master.3
+  ImageTag: master.4
   Replicas: 3
 
